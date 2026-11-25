@@ -4,30 +4,31 @@ A partner pricing app for PESTABLE subcontractors. It's one file (`index.html`) 
 
 ## How a subcontractor uses it
 **⚡ Quick price** (two taps):
-1. Tap the pest. Each tile shows the lowest price, or says "PESTABLE quotes".
+1. Tap the pest. Each tile shows the standard price, or says "PESTABLE quotes".
 2. For general pests only, tap the property type.
 
-The result shows **Charge customer** and **You earn** side by side for **Standard** (charge this first) and **Lower** (only if the customer asks for less), with the maths underneath. Tap one, then **Send quote** (Copy, Text or WhatsApp). The charge and your earnings stay pinned at the bottom.
+The result shows **Charge customer** next to **You earn** at the standard price.
 
-**📋 Price list** shows the whole PESTABLE partner price list at a glance, with charge and earnings for each service and a worked example of how prices are calculated.
+**Customer wants a lower price?** Drag the slider, or tap ▼ Lower / ▲ Higher (in $5 steps). The discount comes out of the subcontractor's commission, and the colour bar shows how much commission is left. The price can't go below the PESTABLE base, where they earn $0. **Back to standard** resets it. **Send quote** (Copy, Text or WhatsApp) uses whatever price is set.
+
+**📋 Price list** shows every service at the standard price, with commission and the lowest possible price.
 
 ## Visits
 - **1 visit:** end of lease flea, general pest (unit, single-storey, double-storey).
-- **German cockroach: priced per visit, 2 visits required.** Standard: charge $202.50 per visit and earn $52.50 per visit. Lower: charge $155.25 and earn $20.25 per visit.
+- **German cockroach:** priced per visit, 2 visits required.
 - **2 visits, PESTABLE quotes:** fleas in a lived-in home, bed bugs, mites, book mites, bird lice (biting pests).
 - **PESTABLE quotes:** rats and mice.
 
-## Prices (PESTABLE partner price list, Nov 2026, the same for Homes & Hedges and Response Real Estate)
-| Service | Base | Standard: charge / you earn | Lower: charge / you earn |
+## Prices (PESTABLE partner price list, Nov 2026)
+| Service | PESTABLE base (lowest price) | Standard charge | You earn at standard |
 |---|---|---|---|
-| End of lease flea (1 visit) | $150 | $202.50 / $52.50 | $155.25 / $20.25 |
-| General pest – unit | $150 | $202.50 / $52.50 | $155.25 / $20.25 |
-| General pest – single-storey | $250 | $337.50 / $87.50 | $258.75 / $33.75 |
-| General pest – double-storey | $300 | $405.00 / $105.00 | $310.50 / $40.50 |
-| German cockroach (per visit, ×2) | $150 | $202.50 / $52.50 | $155.25 / $20.25 |
+| End of lease flea (1 visit) | $150 | $202.50 | $52.50 |
+| General pest – unit | $150 | $202.50 | $52.50 |
+| General pest – single-storey | $250 | $337.50 | $87.50 |
+| General pest – double-storey | $300 | $405.00 | $105.00 |
+| German cockroach (per visit, ×2) | $150 | $202.50 | $52.50 |
 
-Standard = base + 35%. Lower = base − 10%, then + 15%. Your commission is the charge less the PESTABLE base.
-Prices are typed in exactly as listed in `SERVICES` at the top of the `<script>` in `index.html`.
+Standard = base + 35%. You earn = the price charged − the PESTABLE base. Prices are in `SERVICES` at the top of the `<script>` in `index.html`.
 
 ## Link
 https://thecyberexterminator.github.io/PestRate/ (GitHub Pages, from the `gh-pages` branch). On iPhone, use Safari → Share → **Add to Home Screen** so it opens like an app.
