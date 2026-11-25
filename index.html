@@ -12,112 +12,120 @@
 <style>
   :root{
     --bg:#eef2f7; --card:#fff; --ink:#0f2440; --muted:#5a6b7f; --line:#d9e1eb; --chip:#f5f8fb;
-    --navy:#0f2440; --lime:#a6f20f; --lime-ink:#0f2440; --green:#3d8b0f;
-    --amber:#d97706; --amber-soft:#fff3dc; --blue:#2563eb; --blue-soft:#e6eefd;
-    --red:#c2410c; --red-soft:#ffe9dd; --lime-soft:#efffd1;
+    --navy:#0f2440; --lime:#a6f20f; --lime-ink:#0f2440; --green:#3d8b0f; --earn:#2f7a06; --earn-soft:#efffd1;
+    --amber:#d97706; --amber-soft:#fff3dc; --blue:#2563eb; --blue-soft:#e6eefd; --red:#c2410c; --red-soft:#ffe9dd;
     --shadow:0 2px 4px rgba(15,36,64,.06),0 10px 30px rgba(15,36,64,.09);
   }
   @media (prefers-color-scheme: dark){
     :root{
       --bg:#081322; --card:#11203a; --ink:#eaf1f8; --muted:#9fb0c3; --line:#243756; --chip:#162944;
-      --navy:#0b1a30; --lime-soft:#22330a; --amber-soft:#3a2a12; --blue-soft:#14284a; --red-soft:#3b1d10;
-      --green:#a6f20f; --shadow:none;
+      --navy:#0b1a30; --green:#a6f20f; --earn:#b8f53d; --earn-soft:#22330a;
+      --amber-soft:#3a2a12; --blue-soft:#14284a; --red-soft:#3b1d10; --shadow:none;
     }
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0}
-  body{background:var(--bg);color:var(--ink);font-family:Lexend,system-ui,-apple-system,sans-serif;
-       min-height:100vh;padding-bottom:110px}
+  body{background:var(--bg);color:var(--ink);font-family:Lexend,system-ui,-apple-system,sans-serif;min-height:100vh;padding-bottom:120px}
   button{font:inherit;color:inherit;cursor:pointer}
   header{background:var(--card);border-bottom:4px solid var(--lime);position:sticky;top:0;z-index:5}
-  .bar{max-width:640px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:10px}
-  .logo{width:42px;height:46px;flex:none}
-  .brand b{display:block;font-weight:800;font-size:20px;letter-spacing:-.3px;font-style:italic}
-  .brand span{display:inline-block;background:var(--lime);color:var(--lime-ink);font-size:10px;font-weight:800;
-              letter-spacing:3px;padding:1px 8px;transform:skew(-10deg)}
-  .call{margin-left:auto;background:var(--lime);color:var(--lime-ink);border:0;border-radius:14px;padding:10px 14px;
-        font-weight:800;letter-spacing:1px;text-decoration:none;display:flex;gap:8px;align-items:center;
-        box-shadow:0 6px 18px rgba(166,242,15,.35);font-size:13px}
-  .call i{background:var(--navy);color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font-style:normal}
-  main{max-width:640px;margin:auto;padding:18px 16px}
-  .pill{display:inline-block;background:var(--navy);color:var(--lime);border-radius:999px;padding:7px 14px;
-        font-size:11px;font-weight:800;letter-spacing:2px}
-  h1{font-size:34px;line-height:1.05;margin:12px 0 4px;letter-spacing:-1px}
-  h1 em{display:block;color:var(--green);font-weight:800}
-  .card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);border-top:8px solid var(--lime);
-        padding:18px;margin-top:18px;overflow:hidden}
+  .bar{max-width:640px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:10px}
+  .logo{width:38px;height:42px;flex:none}
+  .brand b{display:block;font-weight:800;font-size:19px;letter-spacing:-.3px;font-style:italic}
+  .brand span{display:inline-block;background:var(--lime);color:var(--lime-ink);font-size:9.5px;font-weight:800;letter-spacing:3px;padding:1px 8px;transform:skew(-10deg)}
+  .call{margin-left:auto;background:var(--lime);color:var(--lime-ink);border-radius:14px;padding:9px 12px;font-weight:800;letter-spacing:.5px;
+        text-decoration:none;display:flex;gap:8px;align-items:center;font-size:13px;line-height:1.1}
+  .call i{background:var(--navy);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-style:normal}
+  .call small{display:block;font-size:10px;font-weight:600;letter-spacing:0}
+  .tabs{max-width:640px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 16px 10px}
+  .tabs button{border:0;background:var(--chip);border-radius:12px;padding:10px;font-weight:600;font-size:14px}
+  .tabs button.on{background:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){.tabs button.on{background:var(--lime);color:var(--lime-ink)}}
+  main{max-width:640px;margin:auto;padding:16px}
+  h1{font-size:28px;line-height:1.08;margin:4px 0 2px;letter-spacing:-.8px}
+  h1 em{color:var(--green);font-weight:800}
+  .lead{color:var(--muted);margin:0 0 4px;font-size:14px}
+  .card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);border-top:8px solid var(--lime);padding:18px;margin-top:14px}
   .top{display:flex;align-items:center;gap:14px}
-  .tag{background:var(--lime);color:var(--lime-ink);font-weight:800;font-size:11px;letter-spacing:2px;
-       padding:7px 12px;border-radius:8px;white-space:nowrap}
+  .tag{background:var(--lime);color:var(--lime-ink);font-weight:800;font-size:11px;letter-spacing:2px;padding:7px 12px;border-radius:8px;white-space:nowrap}
   .prog{flex:1;height:7px;background:var(--line);border-radius:9px;overflow:hidden}
   .prog div{height:100%;background:var(--navy);width:0;transition:width .4s ease}
   @media (prefers-color-scheme: dark){.prog div{background:var(--lime)}}
-  h2{font-size:23px;margin:16px 0 4px;letter-spacing:-.4px}
-  .sub{color:var(--muted);margin:0 0 14px;font-size:14px}
+  h2{font-size:22px;margin:16px 0 12px;letter-spacing:-.4px}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .tile{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 12px;text-align:left;
-        display:flex;align-items:center;gap:10px;min-height:74px;position:relative;transition:transform .12s,border-color .15s,background .15s}
-  .tile:active{transform:scale(.97)}
-  .tile:hover{border-color:var(--lime)}
-  .tile.sel{border-color:var(--navy);background:var(--lime-soft)}
-  .tile .ic{flex:none;width:40px;height:44px;display:grid;place-items:center;font-size:20px;
-            background:var(--navy);clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%)}
-  .tile b{font-weight:600;font-size:15px;line-height:1.2}
-  .tile small{display:block;color:var(--muted);font-size:11.5px;font-weight:400;margin-top:2px}
-  .badge{position:absolute;top:-8px;right:8px;background:var(--red);color:#fff;font-size:10px;font-weight:800;
-         padding:3px 7px;border-radius:999px;letter-spacing:.5px}
+  .tile{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px;text-align:left;display:flex;align-items:center;gap:10px;
+        min-height:78px;position:relative;transition:transform .12s,border-color .15s}
+  .tile:active{transform:scale(.97)} .tile:hover{border-color:var(--lime)}
+  .tile .ic{flex:none;width:38px;height:42px;display:grid;place-items:center;font-size:19px;background:var(--navy);
+            clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%)}
+  .tile b{font-weight:600;font-size:15px;line-height:1.2;display:block}
+  .tile small{display:block;font-size:12px;margin-top:3px;color:var(--muted)}
+  .tile small.p{color:var(--earn);font-weight:600}
+  .badge{position:absolute;top:-8px;right:8px;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:999px;background:var(--red)}
   .badge.q{background:var(--blue)}
   .wide{grid-column:1/-1}
   .back{background:none;border:0;color:var(--muted);padding:14px 0 2px;font-size:15px}
-  .step{animation:in .35s ease}
-  @keyframes in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
-  .opt{border:2px solid var(--line);border-radius:18px;padding:16px;text-align:left;width:100%;background:var(--card);margin-bottom:10px;transition:border-color .15s}
-  .opt.sel{border-color:var(--navy);background:var(--lime-soft)}
-  .opt .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-  .opt h3{margin:0;font-size:17px}
-  .opt .big{font-size:28px;font-weight:800}
-  .opt p{margin:6px 0 0;color:var(--muted);font-size:13px}
-  .alert{border-radius:16px;padding:12px 14px;margin:12px 0;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+  .step{animation:in .3s ease}
+  @keyframes in{from{opacity:.2;transform:translateX(14px)}to{opacity:1;transform:none}}
+  /* result */
+  .svc{display:flex;gap:10px;align-items:center;margin:14px 0 4px}
+  .svc .ic{width:44px;height:48px;font-size:22px;display:grid;place-items:center;background:var(--navy);clip-path:polygon(50% 0,100% 15%,100% 60%,50% 100%,0 60%,0 15%);flex:none}
+  .svc h2{margin:0;font-size:21px}
+  .svc p{margin:2px 0 0;color:var(--muted);font-size:13px}
+  .opt{display:block;width:100%;text-align:left;border:3px solid var(--line);border-radius:20px;padding:14px;margin-top:12px;background:var(--card);position:relative}
+  .opt.sel{border-color:var(--navy);box-shadow:0 0 0 3px var(--lime)}
+  .opt .ttl{font-weight:800;font-size:17px}
+  .opt .ttl .hint{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin:4px 0 0 30px}
+  .opt .radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:inline-grid;place-items:center;margin-right:8px;vertical-align:-5px}
+  .opt.sel .radio{border-color:var(--navy);background:var(--navy)}
+  .opt.sel .radio::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .box{border-radius:14px;padding:10px 12px;background:var(--chip)}
+  .box.e{background:var(--earn-soft)}
+  .box small{display:block;font-size:11px;letter-spacing:1px;font-weight:600;text-transform:uppercase;color:var(--muted)}
+  .box b{display:block;font-size:27px;letter-spacing:-.5px;line-height:1.15}
+  .box.e b{color:var(--earn)}
+  .box em{display:block;font-style:normal;font-size:12px;color:var(--muted)}
+  .how{font-size:12px;color:var(--muted);margin-top:8px}
+  .alert{border-radius:16px;padding:12px 14px;margin:12px 0 0;font-size:14px;display:flex;gap:10px;align-items:flex-start;line-height:1.4}
   .alert.red{background:var(--red-soft);border-left:5px solid var(--red)}
   .alert.amber{background:var(--amber-soft);border-left:5px solid var(--amber)}
   .alert.blue{background:var(--blue-soft);border-left:5px solid var(--blue)}
+  .alert.green{background:var(--earn-soft);border-left:5px solid var(--green)}
   .alert b{display:block}
-  .line{border:2px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
-  .line .hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
-  .line h3{margin:0;font-size:17px}
-  .line .rm{background:none;border:0;color:var(--muted);font-size:20px;line-height:1;padding:0 4px}
-  .nums{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-  .num{background:var(--chip);border-radius:12px;padding:10px}
-  .num small{display:block;color:var(--muted);font-size:11px;letter-spacing:1px;font-weight:600;text-transform:uppercase}
-  .num b{font-size:20px}
-  .num.comm{background:var(--lime-soft)}
-  ul.inc{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
-  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-  .chip{font-size:11.5px;font-weight:600;border-radius:999px;padding:4px 9px;background:var(--chip);border:1px solid var(--line)}
-  .chip.r{background:var(--red-soft);border-color:transparent}
-  .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-  .btn{border:0;border-radius:14px;padding:15px;font-weight:800;letter-spacing:.5px;text-align:center;text-decoration:none;display:block}
-  .btn.n{background:var(--navy);color:#fff}
-  .btn.l{background:var(--lime);color:var(--lime-ink)}
-  .btn.o{background:transparent;border:2px solid var(--line)}
-  .seg{display:grid;grid-template-columns:1fr 1fr;background:var(--chip);border-radius:14px;padding:4px;gap:4px;margin-top:10px}
-  .seg button{border:0;background:transparent;border-radius:10px;padding:10px;font-weight:600;font-size:14px}
-  .seg button.on{background:var(--navy);color:#fff}
-  .checks{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin:18px 0 0;color:var(--ink);font-size:14px}
-  .checks span::before{content:"✓ ";color:var(--green);font-weight:800}
-  .foot{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);z-index:6;
-        padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
-  .foot .in{max-width:640px;margin:auto;display:flex;align-items:center;gap:12px}
-  .foot .tot{flex:1}
-  .foot small{color:var(--muted);font-size:11px;letter-spacing:1px;font-weight:600;text-transform:uppercase}
-  .foot b{display:block;font-size:24px;line-height:1.1}
-  .foot .c{color:var(--green);font-size:13px;font-weight:600}
-  .foot .btn{padding:14px 18px}
-  .toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--navy);
-         color:#fff;padding:10px 16px;border-radius:12px;transition:.25s;z-index:9;font-size:14px}
+  ul.inc{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.5}
+  .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .btn{border:0;border-radius:14px;padding:15px 10px;font-weight:800;letter-spacing:.3px;text-align:center;text-decoration:none;display:block;font-size:15px}
+  .btn.n{background:var(--navy);color:#fff} .btn.l{background:var(--lime);color:var(--lime-ink)} .btn.o{background:transparent;border:2px solid var(--line)}
+  @media (prefers-color-scheme: dark){.btn.n{background:#22406a}}
+  /* price list */
+  .pl{border:2px solid var(--line);border-radius:18px;padding:14px;margin-top:12px}
+  .pl h3{margin:0;font-size:16px;display:flex;gap:8px;align-items:center}
+  .pl .meta{font-size:12.5px;color:var(--muted);margin:3px 0 0}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+  th{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;font-weight:600;padding:4px 6px}
+  th:first-child,td:first-child{text-align:left}
+  td{padding:8px 6px;text-align:right;border-top:1px solid var(--line)}
+  td.e{color:var(--earn);font-weight:800}
+  td b{font-size:16px}
+  .chip{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:3px 8px;background:var(--red-soft);color:var(--red)}
+  @media (prefers-color-scheme: dark){.chip{color:#ffb38a}}
+  .chip.q{background:var(--blue-soft);color:var(--blue)}
+  .explain{background:var(--chip);border-radius:16px;padding:14px;font-size:14px;line-height:1.5}
+  .explain .eq{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:6px 0}
+  .explain .eq:first-of-type{border-top:0}
+  .notes{font-size:12.5px;color:var(--muted);margin-top:18px;line-height:1.5}
+  .foot{position:fixed;left:0;right:0;bottom:0;background:var(--navy);color:#fff;z-index:6;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+        transform:translateY(110%);transition:transform .3s ease}
+  .foot.on{transform:none}
+  .foot .in{max-width:640px;margin:auto;display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:center}
+  .foot small{display:block;font-size:10.5px;letter-spacing:1px;font-weight:600;text-transform:uppercase;opacity:.75}
+  .foot b{display:block;font-size:23px;line-height:1.1}
+  .foot .e b{color:var(--lime)}
+  .foot .btn{padding:12px 14px;font-size:14px}
+  .toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--navy);color:#fff;
+         padding:10px 16px;border-radius:12px;transition:.25s;z-index:9;font-size:14px;border:1px solid var(--lime)}
   .toast.on{opacity:1;transform:translateX(-50%)}
-  .notes{font-size:12.5px;color:var(--muted);margin-top:22px;line-height:1.5}
-  @media (max-width:380px){ h1{font-size:28px} .tile b{font-size:14px} .tile .ic{width:34px;height:38px;font-size:17px} }
+  @media (max-width:380px){ .box b{font-size:22px} .tile b{font-size:14px} .foot b{font-size:19px} }
 </style>
 </head>
 <body>
@@ -125,252 +133,259 @@
   <div class="bar">
     <svg class="logo" viewBox="0 0 42 46" aria-hidden="true"><path d="M21 1 41 7v18c0 10-9 17-20 20C10 42 1 35 1 25V7Z" fill="#0f2440" stroke="#a6f20f" stroke-width="2"/><text x="21" y="29" text-anchor="middle" font-family="Lexend,sans-serif" font-weight="800" font-style="italic" font-size="15" fill="#fff">PR</text></svg>
     <div class="brand"><b>PESTRATE</b><span>PARTNER PRICING</span></div>
-    <a class="call" href="tel:1300197368"><i>✆</i>PESTABLE</a>
+    <a class="call" href="tel:1300197368"><i>✆</i><span>PESTABLE<small>1300 197 368</small></span></a>
   </div>
+  <div class="tabs"><button id="tQuote" class="on">⚡ Quick price</button><button id="tList">📋 Price list</button></div>
 </header>
 
 <main>
-  <div class="pill">QUOTE IT. BOOK IT. EARN.</div>
-  <h1>Price the job. <em>Know your cut.</em></h1>
-
-  <div class="card">
-    <div class="top"><div class="tag" id="tag">STEP 1 OF 3</div><div class="prog"><div id="prog"></div></div></div>
-    <div id="view"></div>
+  <div id="pageQuote">
+    <h1>What to charge. <em>What you earn.</em></h1>
+    <p class="lead">Two taps. Prices straight from the PESTABLE partner price list.</p>
+    <div class="card">
+      <div class="top"><div class="tag" id="tag">STEP 1</div><div class="prog"><div id="prog"></div></div></div>
+      <div id="view"></div>
+    </div>
   </div>
 
-  <div class="checks"><span>PESTABLE licensed technicians</span><span>Per-treatment pricing</span><span>Clear quote first</span></div>
+  <div id="pageList" hidden>
+    <h1>Price list. <em>At a glance.</em></h1>
+    <p class="lead">Every price is what you charge the customer. Green is what you earn.</p>
+    <div id="list"></div>
+  </div>
 
   <div class="notes">
-    <b>How the price works.</b> Standard is the PESTABLE base + 35%. Lower is the base less 10%, then + 15%, for when a customer needs a lower price.
-    Your commission is the retail price less the PESTABLE base. All prices are in AUD, per treatment.<br><br>
-    <b>Certificate:</b> records the treatment and what was seen at the time of service. It does not certify that the property is flea-free.
+    <b>Certificate:</b> records the treatment and what was seen at the time of service. It does not certify the property is flea-free.
     Roof treatment and inspection need safe, suitable access.<br>
-    <b>Vacancy:</b> 2 hours after treatment, subject to product label instructions. Follow the technician's re-entry directions and any longer period on the label.
+    <b>Vacancy:</b> allow 2 hours after treatment, subject to product label instructions. Follow the technician's re-entry directions and any longer period on the label.<br>
+    All prices in AUD. Source: PESTABLE partner price list, November 2026.
   </div>
 </main>
 
-<div class="foot"><div class="in">
-  <div class="tot"><small id="ftl">Customer pays</small><b id="ftot">$0.00</b><span class="c" id="fcom">Pick a pest to start</span></div>
-  <a class="btn l" href="tel:1300197368">CALL PESTABLE</a>
+<div class="foot" id="foot"><div class="in">
+  <div><small>Charge customer</small><b id="fCharge">$0</b></div>
+  <div class="e"><small>You earn</small><b id="fEarn">$0</b></div>
+  <button class="btn l" id="fSend">Send quote</button>
 </div></div>
 <div class="toast" id="toast"></div>
 
 <script>
-/* ===== Settings: change prices here ===== */
+/* ==========================================================
+   PRICES — copied exactly from the PESTABLE partner price list.
+   std = Standard (base + 35%)      low = Lower (base −10%, then +15%)
+   charge = what the customer pays   earn = your commission
+   All figures are PER TREATMENT.
+   ========================================================== */
 const PHONE = '1300 197 368';
-const STD_MARKUP = 0.35;   // Standard: base + 35%
-const LOW_CUT = 0.10;      // Lower: base - 10% ...
-const LOW_MARKUP = 0.15;   // ... then + 15%
-
 const VACATE = 'Vacate for 2 hours after treatment, subject to product label instructions.';
-const NOT_CARPET = 'Not during carpet cleaning.';
+const GP_VAC = 'Not during carpet cleaning. ' + VACATE;
 const GP_INC = ['Internal and external treatment','Roof cavity treatment with safe access','Free roof rodent activity inspection','Rodent control quoted separately'];
 
-// Pests. treatments = number of visits required. base = PESTABLE base per treatment (null = PESTABLE quotes it).
-const PESTS = {
-  fleas:   {name:'Fleas', icon:'🐾', note:'End of lease', biting:true, treatments:2,
-            svc:{name:'End of lease flea treatment', base:150, vac:'Can be done before or after carpet cleaning.',
-                 inc:['Visual assessment for flea activity','Preventative treatment','Treatment completion certificate']}},
-  german:  {name:'German cockroaches', icon:'🪳', note:'Kitchen roaches', treatments:2,
-            svc:{name:'German cockroach treatment', base:150, vac:VACATE, alert:true, inc:['Inspection','Baiting','Spraying']}},
-  general: {name:'General pests', icon:'🕷️', note:'Spiders, ants, roaches', treatments:1, property:true},
-  bedbugs: {name:'Bed bugs', icon:'🛏️', note:'Biting pest', biting:true, treatments:2, quote:'Assessment and treatment scope by quotation.'},
-  mites:   {name:'Mites', icon:'🔬', note:'Biting pest', biting:true, treatments:2, quote:'Assessment and treatment scope by quotation.'},
-  bookmites:{name:'Book mites', icon:'📚', note:'Biting pest', biting:true, treatments:2, quote:'Assessment and treatment scope by quotation.'},
-  birdlice:{name:'Bird lice', icon:'🐦', note:'Biting pest', biting:true, treatments:2, quote:'Assessment and treatment scope by quotation.'},
-  rodents: {name:'Rats and mice', icon:'🐀', note:'Rodents', treatments:1, quote:'Control options and treatment scope by quotation.'},
-  unsure:  {name:'Not sure', icon:'❓', note:'We\'ll help', treatments:1, quote:'Call PESTABLE and describe what the customer is seeing.'}
-};
-const PROPERTY = {
-  unit:   {name:'Unit or apartment', icon:'🏢', svc:{name:'General pest - unit', base:150}},
-  single: {name:'House, single-storey', icon:'🏠', svc:{name:'General pest - single-storey', base:250}},
-  double: {name:'House, double-storey', icon:'🏘️', svc:{name:'General pest - double-storey', base:300}}
+const SERVICES = {
+  eolFlea: {name:'End of lease flea treatment', base:150, std:{charge:202.50, earn:52.50}, low:{charge:155.25, earn:20.25}, visits:1,
+            vac:'Can be done before or after carpet cleaning.', inc:['Visual assessment for flea activity','Preventative treatment','Treatment completion certificate']},
+  unit:    {name:'General pest – unit', base:150, std:{charge:202.50, earn:52.50}, low:{charge:155.25, earn:20.25}, visits:1, vac:GP_VAC, inc:GP_INC},
+  single:  {name:'General pest – single-storey house', base:250, std:{charge:337.50, earn:87.50}, low:{charge:258.75, earn:33.75}, visits:1, vac:GP_VAC, inc:GP_INC},
+  double:  {name:'General pest – double-storey house', base:300, std:{charge:405.00, earn:105.00}, low:{charge:310.50, earn:40.50}, visits:1, vac:GP_VAC, inc:GP_INC},
+  german:  {name:'German cockroach treatment', base:150, std:{charge:202.50, earn:52.50}, low:{charge:155.25, earn:20.25}, visits:2,
+            vac:VACATE, inc:['Inspection','Baiting','Spraying']}
 };
 
-/* ===== Maths ===== */
-const r2 = n => Math.round(n*100)/100;
-const money = n => '$' + n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
-function price(base, tier){
-  if (tier === 'lower'){ const b = r2(base*(1-LOW_CUT)); const retail = r2(b*(1+LOW_MARKUP)); return {base:b, retail, comm:r2(retail-b)}; }
-  const retail = r2(base*(1+STD_MARKUP)); return {base, retail, comm:r2(retail-base)};
-}
+// What the subcontractor taps first.
+const PESTS = [
+  {k:'eolFlea', name:'Fleas – end of lease', icon:'🔑', svc:'eolFlea'},
+  {k:'flea',    name:'Fleas – lived-in home', icon:'🐾', visits:2, quote:'Biting pest. Treatment scope by quotation.'},
+  {k:'general', name:'General pests', note:'Spiders, ants, roaches', icon:'🕷️', property:true},
+  {k:'german',  name:'German cockroaches', icon:'🪳', svc:'german'},
+  {k:'bedbugs', name:'Bed bugs', icon:'🛏️', visits:2, quote:'Biting pest. Assessment and treatment scope by quotation.'},
+  {k:'mites',   name:'Mites', icon:'🔬', visits:2, quote:'Biting pest. Assessment and treatment scope by quotation.'},
+  {k:'bookmites',name:'Book mites', icon:'📚', visits:2, quote:'Biting pest. Assessment and treatment scope by quotation.'},
+  {k:'birdlice',name:'Bird lice', icon:'🐦', visits:2, quote:'Biting pest. Assessment and treatment scope by quotation.'},
+  {k:'rodents', name:'Rats and mice', icon:'🐀', quote:'Control options and treatment scope by quotation.'},
+  {k:'unsure',  name:'Not sure', icon:'❓', quote:'Call PESTABLE and describe what the customer is seeing.'}
+];
+const PROPERTY = [
+  {k:'unit', name:'Unit or apartment', icon:'🏢'},
+  {k:'single', name:'House – single-storey', icon:'🏠'},
+  {k:'double', name:'House – double-storey', icon:'🏘️'}
+];
 
-/* ===== State ===== */
-let state = {step:'pest', pest:null, prop:null, tier:'standard'};
-let cart = [];  // {pestKey, propKey, tier}
-try { cart = JSON.parse(localStorage.getItem('pestrate-cart')) || []; } catch(e){ cart = []; }
-const save = () => { try { localStorage.setItem('pestrate-cart', JSON.stringify(cart)); } catch(e){} };
+/* ===== Helpers ===== */
+const money = n => '$' + (Math.round(n*100)/100).toLocaleString('en-AU',{minimumFractionDigits: n%1 ? 2 : 0, maximumFractionDigits:2});
+const money2 = n => '$' + n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+const $ = id => document.getElementById(id);
+let state = {step:1, pest:null, svc:null, tier:'std'};
 
-const view = document.getElementById('view');
-function setProgress(n, total, label){
-  document.getElementById('prog').style.width = (n/total*100)+'%';
-  document.getElementById('tag').textContent = label || `STEP ${n} OF ${total}`;
-}
-function svcFor(pestKey, propKey){
-  const p = PESTS[pestKey];
-  if (p.property) return propKey ? {...PROPERTY[propKey].svc, vac: NOT_CARPET+' '+VACATE, inc: GP_INC} : null;
-  return p.svc || null;
-}
-function needsProperty(){ return PESTS[state.pest].property; }
-function totalSteps(){ return state.pest && needsProperty() ? 4 : 3; }
+function setProgress(pct, label){ $('prog').style.width = pct+'%'; $('tag').textContent = label; }
+function fromPrice(svc){ return SERVICES[svc].low.charge * SERVICES[svc].visits; }
 
-/* ===== Steps ===== */
+/* ===== Quick price ===== */
 function render(){
-  const s = state.step;
-  if (s === 'pest') stepPest();
-  else if (s === 'prop') stepProp();
-  else if (s === 'tier') stepTier();
-  else stepQuote();
+  if (state.step === 1) stepPest();
+  else if (state.step === 2) stepProperty();
+  else stepResult();
   updateFoot();
-  window.scrollTo({top: s === 'pest' ? 0 : document.querySelector('.card').offsetTop - 80, behavior:'smooth'});
 }
 function stepPest(){
-  setProgress(1, 3, cart.length ? 'ADD A SERVICE' : 'STEP 1 OF 3');
-  view.innerHTML = `<div class="step"><h2>What are you dealing with?</h2>
-    <p class="sub">Tap the pest the customer has.</p>
-    <div class="grid">${Object.entries(PESTS).map(([k,p]) => `
-      <button class="tile" data-k="${k}">
-        ${p.treatments > 1 ? `<span class="badge">2 TREATMENTS</span>` : (!p.svc && !p.property ? `<span class="badge q">QUOTE</span>` : '')}
-        <span class="ic">${p.icon}</span><span><b>${p.name}</b><small>${p.note}</small></span>
-      </button>`).join('')}</div>
-    ${cart.length ? `<button class="back" data-go="quote">← Back to quote</button>` : ''}</div>`;
-  view.querySelectorAll('.tile').forEach(b => b.onclick = () => {
-    b.classList.add('sel');
-    state.pest = b.dataset.k; state.prop = null;
-    const p = PESTS[state.pest];
-    setTimeout(() => {
-      if (p.property) state.step = 'prop';
-      else if (p.svc) state.step = 'tier';
-      else { addLine(); state.step = 'quote'; }
-      render();
-    }, 160);
+  setProgress(33,'STEP 1 · PEST');
+  $('view').innerHTML = `<div class="step"><h2>What are you dealing with?</h2><div class="grid">
+    ${PESTS.map(p => {
+      const visits = p.svc ? SERVICES[p.svc].visits : (p.visits||1);
+      const badge = visits > 1 ? '<span class="badge">2 VISITS</span>' : (p.quote ? '<span class="badge q">QUOTE</span>' : '');
+      const sub = p.svc ? `<small class="p">From ${money(SERVICES[p.svc].low.charge)}${visits>1?' a visit':''}</small>`
+                : p.property ? `<small class="p">From ${money(SERVICES.unit.low.charge)}</small>`
+                : `<small>${p.note || 'PESTABLE quotes'}</small>`;
+      return `<button class="tile" data-k="${p.k}">${badge}<span class="ic">${p.icon}</span><span><b>${p.name}</b>${sub}</span></button>`;
+    }).join('')}</div></div>`;
+  $('view').querySelectorAll('.tile').forEach(b => b.onclick = () => {
+    const p = PESTS.find(x => x.k === b.dataset.k);
+    state.pest = p; state.tier = 'std';
+    if (p.property){ state.step = 2; }
+    else { state.svc = p.svc || null; state.step = 3; }
+    render(); scrollCard();
   });
-  bindGo();
 }
-function stepProp(){
-  setProgress(2, 4);
-  view.innerHTML = `<div class="step"><h2>What type of property?</h2>
-    <p class="sub">General pest is priced by property size.</p>
-    <div class="grid">${Object.entries(PROPERTY).map(([k,p]) => {
-      const pr = price(p.svc.base, 'standard');
-      return `<button class="tile ${k==='double'?'wide':''}" data-k="${k}"><span class="ic">${p.icon}</span>
-        <span><b>${p.name}</b><small>From ${money(price(p.svc.base,'lower').retail)} · standard ${money(pr.retail)}</small></span></button>`;
-    }).join('')}</div>
-    <button class="back" data-go="pest">← Back</button></div>`;
-  view.querySelectorAll('.tile').forEach(b => b.onclick = () => {
-    b.classList.add('sel'); state.prop = b.dataset.k;
-    setTimeout(() => { state.step = 'tier'; render(); }, 160);
-  });
-  bindGo();
+function stepProperty(){
+  setProgress(66,'STEP 2 · PROPERTY');
+  $('view').innerHTML = `<div class="step"><h2>What type of property?</h2><div class="grid">
+    ${PROPERTY.map(p => `<button class="tile ${p.k==='double'?'wide':''}" data-k="${p.k}"><span class="ic">${p.icon}</span>
+      <span><b>${p.name}</b><small class="p">${money2(SERVICES[p.k].std.charge)} · you earn ${money2(SERVICES[p.k].std.earn)}</small></span></button>`).join('')}
+    </div><button class="back" id="back">← Back</button></div>`;
+  $('view').querySelectorAll('.tile').forEach(b => b.onclick = () => { state.svc = b.dataset.k; state.step = 3; render(); scrollCard(); });
+  $('back').onclick = () => { state.step = 1; render(); };
 }
-function stepTier(){
-  const n = totalSteps(); setProgress(n-1, n);
-  const p = PESTS[state.pest], svc = svcFor(state.pest, state.prop);
-  const std = price(svc.base,'standard'), low = price(svc.base,'lower');
-  const t = p.treatments;
-  view.innerHTML = `<div class="step"><h2>Which price?</h2>
-    <p class="sub">${svc.name}${t>1 ? ` · price per treatment, ${t} treatments` : ''}</p>
-    ${treatAlert(p)}
-    <button class="opt ${state.tier==='standard'?'sel':''}" data-t="standard">
-      <div class="row"><h3>⭐ Standard</h3><span class="big">${money(std.retail)}</span></div>
-      <p>You earn <b>${money(std.comm)}</b> per treatment${t>1?` · <b>${money(std.comm*t)}</b> for the job`:''}</p>
-    </button>
-    <button class="opt ${state.tier==='lower'?'sel':''}" data-t="lower">
-      <div class="row"><h3>🏷️ Lower price</h3><span class="big">${money(low.retail)}</span></div>
-      <p>Only when the customer needs a price reduction. Saves them ${money(std.retail-low.retail)}.
-         You earn <b>${money(low.comm)}</b> per treatment${t>1?` · <b>${money(low.comm*t)}</b> for the job`:''}</p>
-    </button>
-    <button class="back" data-go="${p.property?'prop':'pest'}">← Back</button></div>`;
-  view.querySelectorAll('.opt').forEach(b => b.onclick = () => {
-    state.tier = b.dataset.t; b.classList.add('sel');
-    setTimeout(() => { addLine(); state.step = 'quote'; render(); }, 160);
-  });
-  bindGo();
+function option(s, tier){
+  const t = s[tier], v = s.visits, sel = state.tier === tier;
+  const title = tier === 'std' ? 'Standard price' : 'Lower price';
+  const hint = tier === 'std' ? 'Charge this first' : `Only if the customer asks for less · saves them ${money2((s.std.charge-s.low.charge)*v)}`;
+  const how = tier === 'std'
+    ? `PESTABLE base ${money2(s.base)} + 35% = ${money2(t.charge)}`
+    : `PESTABLE base ${money2(s.base)} − 10% = ${money2(s.base*0.9)}, then + 15% = ${money2(t.charge)}`;
+  return `<button class="opt ${sel?'sel':''}" data-t="${tier}">
+    <div class="ttl"><div><span class="radio"></span>${title}</div><span class="hint">${hint}</span></div>
+    ${v>1 ? `
+      <div class="two">
+        <div class="box"><small>Charge · total</small><b>${money2(t.charge*v)}</b><em>${money2(t.charge)} × 2 visits</em></div>
+        <div class="box e"><small>You earn · total</small><b>${money2(t.earn*v)}</b><em>${money2(t.earn)} × 2 visits</em></div>
+      </div>` : `
+      <div class="two">
+        <div class="box"><small>Charge customer</small><b>${money2(t.charge)}</b></div>
+        <div class="box e"><small>You earn</small><b>${money2(t.earn)}</b></div>
+      </div>`}
+    <div class="how">${how}${v>1?' per visit':''}. You earn the difference.</div>
+  </button>`;
 }
-function treatAlert(p){
-  if (p.treatments < 2) return '';
-  const why = p.biting ? `${p.name} are a biting pest. Eggs survive the first visit, so a second treatment is needed to break the life cycle.`
-                       : `German cockroaches breed fast and eggs survive the first visit, so a second treatment is needed.`;
+function stepResult(){
+  setProgress(100,'YOUR PRICE');
+  const p = state.pest;
+  let html = '';
+  if (!state.svc){
+    const two = (p.visits||1) > 1;
+    html = `<div class="svc"><span class="ic">${p.icon}</span><div><h2>${p.name}</h2><p>Not on the partner price list</p></div></div>
+      <div class="alert blue"><span>📞</span><span><b>Call PESTABLE for a quote</b>${p.quote} Ring ${PHONE} and PESTABLE will price the job.</span></div>
+      ${two ? twoVisitAlert(p) : ''}
+      <div class="btns"><a class="btn l" href="tel:1300197368">Call PESTABLE</a><button class="btn o" id="again">New price</button></div>`;
+  } else {
+    const s = SERVICES[state.svc];
+    html = `<div class="svc"><span class="ic">${p.icon}</span><div><h2>${s.name}</h2>
+        <p>${s.visits>1 ? '2 visits required · priced per visit' : '1 visit'}</p></div></div>
+      ${s.visits>1 ? twoVisitAlert(p) : (state.svc==='eolFlea' ? `<div class="alert green"><span>✅</span><span><b>One visit only</b>End of lease flea is a single preventative treatment for an empty property.</span></div>` : '')}
+      ${option(s,'std')}${option(s,'low')}
+      <div class="alert amber"><span>⏱️</span><span><b>Vacancy</b>${s.vac}</span></div>
+      <ul class="inc">${s.inc.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="btns">
+        <button class="btn n" id="copy">Copy quote</button><a class="btn l" id="sms" href="#">Text customer</a>
+        <a class="btn o" id="wa" href="#">WhatsApp</a><button class="btn o" id="again">New price</button>
+      </div>`;
+  }
+  $('view').innerHTML = `<div class="step">${html}<button class="back" id="back">← Back</button></div>`;
+  $('view').querySelectorAll('.opt').forEach(b => b.onclick = () => { state.tier = b.dataset.t; render(); });
+  $('again').onclick = () => { state = {step:1, pest:null, svc:null, tier:'std'}; render(); window.scrollTo({top:0,behavior:'smooth'}); };
+  $('back').onclick = () => { state.step = p.property ? 2 : 1; render(); };
+  if (state.svc){
+    const msg = quoteText();
+    $('copy').onclick = copyQuote;
+    $('sms').href = 'sms:?&body=' + encodeURIComponent(msg);
+    $('wa').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+  }
+}
+function twoVisitAlert(p){
+  const why = p.k === 'german'
+    ? 'German cockroaches breed fast and the eggs survive the first visit.'
+    : `${p.name.replace(/ –.*/,'')} are a biting pest. The eggs survive the first visit, so a second treatment breaks the life cycle.`;
   return `<div class="alert red"><span>⚠️</span><span><b>Two treatments required</b>${why} Tell the customer before you book.</span></div>`;
 }
-function addLine(){ cart.push({pestKey: state.pest, propKey: state.prop, tier: state.tier}); save(); }
-
-function lineCalc(l){
-  const p = PESTS[l.pestKey], svc = svcFor(l.pestKey, l.propKey);
-  if (!svc) return {p, svc:null};
-  const pr = price(svc.base, l.tier), t = p.treatments;
-  return {p, svc, pr, t, retail: r2(pr.retail*t), comm: r2(pr.comm*t)};
-}
-function totals(){
-  let retail = 0, comm = 0, quotes = 0;
-  cart.forEach(l => { const c = lineCalc(l); if (c.svc){ retail += c.retail; comm += c.comm; } else quotes++; });
-  return {retail: r2(retail), comm: r2(comm), quotes};
-}
-
-function stepQuote(){
-  const n = 3; setProgress(n, n, 'QUOTE READY');
-  const T = totals();
-  view.innerHTML = `<div class="step"><h2>Your quote 🎉</h2>
-    <p class="sub">Read this to the customer, then send it.</p>
-    ${cart.map((l,i) => {
-      const c = lineCalc(l), p = c.p;
-      if (!c.svc) return `<div class="line"><div class="hd"><h3>${p.icon} ${p.name}</h3><button class="rm" data-rm="${i}" aria-label="Remove">×</button></div>
-        <div class="alert blue"><span>📞</span><span><b>Contact PESTABLE for a quote</b>${p.quote} Call ${PHONE}.</span></div>
-        ${p.treatments>1?`<div class="chips"><span class="chip r">⚠️ Biting pest · 2 treatments required</span></div>`:''}</div>`;
-      return `<div class="line"><div class="hd"><h3>${p.icon} ${c.svc.name}</h3><button class="rm" data-rm="${i}" aria-label="Remove">×</button></div>
-        <div class="chips"><span class="chip">${l.tier==='lower'?'🏷️ Lower price':'⭐ Standard'}</span>
-          ${c.t>1?`<span class="chip r">⚠️ ${c.t} treatments required</span>`:'<span class="chip">1 treatment</span>'}</div>
-        <div class="nums">
-          <div class="num"><small>Per treatment</small><b>${money(c.pr.retail)}</b></div>
-          <div class="num"><small>Customer pays</small><b>${money(c.retail)}</b></div>
-          <div class="num comm"><small>Your commission</small><b>${money(c.comm)}</b></div>
-          <div class="num"><small>PESTABLE base</small><b>${money(r2(c.pr.base*c.t))}</b></div>
-        </div>
-        <div class="seg"><button data-sw="${i}" data-t="standard" class="${l.tier==='standard'?'on':''}">Standard</button><button data-sw="${i}" data-t="lower" class="${l.tier==='lower'?'on':''}">Lower price</button></div>
-        <div class="alert amber"><span>⏱️</span><span><b>Vacancy</b>${c.svc.vac}</span></div>
-        <ul class="inc">${c.svc.inc.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
-    }).join('')}
-    ${!cart.length ? '<p class="sub">No services yet.</p>' : ''}
-    ${T.quotes ? `<p class="sub">Total excludes ${T.quotes} item${T.quotes>1?'s':''} that PESTABLE quotes.</p>`:''}
-    <div class="btns">
-      <button class="btn o" data-go="pest">＋ Add service</button>
-      <button class="btn o" id="reset">↺ New job</button>
-      <button class="btn n" id="copy">Copy quote</button>
-      <a class="btn l" id="sms" href="#">Text customer</a>
-      <a class="btn l wide" id="wa" href="#" style="grid-column:1/-1">WhatsApp</a>
-    </div></div>`;
-  view.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { cart.splice(+b.dataset.rm,1); save(); if(!cart.length) state.step='pest'; render(); });
-  view.querySelectorAll('[data-sw]').forEach(b => b.onclick = () => { cart[+b.dataset.sw].tier = b.dataset.t; save(); render(); });
-  document.getElementById('reset').onclick = () => { cart = []; save(); state = {step:'pest', pest:null, prop:null, tier:'standard'}; render(); };
-  const msg = quoteText();
-  document.getElementById('copy').onclick = () => { navigator.clipboard?.writeText(msg).then(()=>toast('Quote copied'), ()=>toast('Copy failed')); };
-  document.getElementById('sms').href = 'sms:?&body=' + encodeURIComponent(msg);
-  document.getElementById('wa').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-  bindGo();
-}
 function quoteText(){
-  const out = ['Pest control quote (PESTABLE)'];
-  cart.forEach(l => {
-    const c = lineCalc(l);
-    if (!c.svc){ out.push(`\n${c.p.name}: price on inspection, quoted by PESTABLE.${c.p.treatments>1?' Two treatments required.':''}`); return; }
-    out.push(`\n${c.svc.name}: ${money(c.pr.retail)} per treatment` + (c.t>1 ? ` x ${c.t} treatments = ${money(c.retail)}. Two treatments are required.` : '.'));
-    out.push('Includes: ' + c.svc.inc.join(', ') + '.');
-    out.push(c.svc.vac);
-  });
-  const T = totals();
-  if (T.retail) out.push(`\nTotal: ${money(T.retail)} (AUD)` + (T.quotes ? ', plus items quoted separately.' : '.'));
-  out.push(`Questions? Call ${PHONE}.`);
-  return out.join('\n');
+  const s = SERVICES[state.svc], t = s[state.tier];
+  const lines = [`Pest control quote – PESTABLE`, '', s.name,
+    s.visits>1 ? `${money2(t.charge)} per treatment × 2 treatments = ${money2(t.charge*2)}. Two treatments are required.` : `Price: ${money2(t.charge)}`,
+    '', 'Includes: ' + s.inc.join(', ') + '.', s.vac, '', `Questions? Call ${PHONE}.`];
+  return lines.join('\n');
 }
-function bindGo(){ view.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { state.step = b.dataset.go; render(); }); }
+function copyQuote(){ const m = quoteText(); (navigator.clipboard ? navigator.clipboard.writeText(m) : Promise.reject()).then(()=>toast('Quote copied ✓'), ()=>toast('Could not copy')); }
 function updateFoot(){
-  const T = totals();
-  document.getElementById('ftot').textContent = money(T.retail);
-  document.getElementById('fcom').textContent = cart.length ? `You earn ${money(T.comm)}` + (T.quotes?` · ${T.quotes} to quote`:'') : 'Pick a pest to start';
+  const on = state.step === 3 && state.svc && !$('pageQuote').hidden;
+  $('foot').classList.toggle('on', !!on);
+  if (!on) return;
+  const s = SERVICES[state.svc], t = s[state.tier];
+  $('fCharge').textContent = money2(t.charge*s.visits);
+  $('fEarn').textContent = money2(t.earn*s.visits);
 }
-let tt; function toast(t){ const e = document.getElementById('toast'); e.textContent = t; e.classList.add('on'); clearTimeout(tt); tt = setTimeout(()=>e.classList.remove('on'),1800); }
+$('fSend').onclick = () => {
+  const msg = quoteText();
+  if (navigator.share) navigator.share({text: msg}).catch(()=>{}); else copyQuote();
+};
+function scrollCard(){ const c = document.querySelector('.card'); window.scrollTo({top: c.offsetTop - 110, behavior:'smooth'}); }
+let tt; function toast(t){ const e = $('toast'); e.textContent = t; e.classList.add('on'); clearTimeout(tt); tt = setTimeout(()=>e.classList.remove('on'),1800); }
 
-if (cart.length) state.step = 'quote';
+/* ===== Price list tab ===== */
+function renderList(){
+  const row = (label, t, v) => `<tr><td>${label}</td><td><b>${money2(t.charge*v)}</b></td><td class="e">${money2(t.earn*v)}</td></tr>`;
+  const card = (icon, s, extra='') => `<div class="pl"><h3>${icon} ${s.name}</h3>
+    <p class="meta">${s.visits>1?'<span class="chip">2 visits required</span> Prices per visit, and for both visits.':'1 visit'} ${extra}</p>
+    <table><tr><th></th><th>Charge</th><th>You earn</th></tr>
+      ${s.visits>1
+        ? row('Standard – per visit', s.std, 1) + row('Standard – both visits', s.std, 2) + row('Lower – per visit', s.low, 1) + row('Lower – both visits', s.low, 2)
+        : row('Standard', s.std, 1) + row('Lower', s.low, 1)}
+    </table></div>`;
+  $('list').innerHTML = `
+    <div class="card" style="border-top-color:var(--navy)">
+      <h2 style="margin-top:0">How the price is worked out</h2>
+      <div class="explain">
+        PESTABLE sets a <b>base price</b>. You add your markup on top, and <b>you keep the difference</b>.
+        <div class="eq" style="margin-top:8px"><span>⭐ Standard</span><span>base + 35%</span></div>
+        <div class="eq"><span>🏷️ Lower (only if asked)</span><span>base − 10%, then + 15%</span></div>
+        <div class="eq"><span><b>Example: $150 base</b></span><span></span></div>
+        <div class="eq"><span>Standard: $150 + 35%</span><span><b>$202.50</b> · earn <b style="color:var(--earn)">$52.50</b></span></div>
+        <div class="eq"><span>Lower: $135 + 15%</span><span><b>$155.25</b> · earn <b style="color:var(--earn)">$20.25</b></span></div>
+      </div>
+    </div>
+    ${card('🔑', SERVICES.eolFlea, '· before or after carpet cleaning')}
+    ${card('🏢', SERVICES.unit)}
+    ${card('🏠', SERVICES.single)}
+    ${card('🏘️', SERVICES.double)}
+    ${card('🪳', SERVICES.german)}
+    <div class="pl"><h3>📞 Call PESTABLE for a quote</h3>
+      <table>
+        <tr><td>🐾 Fleas – lived-in home</td><td><span class="chip">2 visits</span></td></tr>
+        <tr><td>🛏️ Bed bugs</td><td><span class="chip">2 visits</span></td></tr>
+        <tr><td>🔬 Mites</td><td><span class="chip">2 visits</span></td></tr>
+        <tr><td>📚 Book mites</td><td><span class="chip">2 visits</span></td></tr>
+        <tr><td>🐦 Bird lice</td><td><span class="chip">2 visits</span></td></tr>
+        <tr><td>🐀 Rats and mice</td><td><span class="chip q">Quote</span></td></tr>
+      </table>
+      <div class="btns" style="grid-template-columns:1fr"><a class="btn l" href="tel:1300197368">Call PESTABLE · ${PHONE}</a></div>
+    </div>`;
+}
+function tab(which){
+  $('pageQuote').hidden = which !== 'quote'; $('pageList').hidden = which !== 'list';
+  $('tQuote').classList.toggle('on', which === 'quote'); $('tList').classList.toggle('on', which === 'list');
+  updateFoot(); window.scrollTo({top:0});
+}
+$('tQuote').onclick = () => tab('quote');
+$('tList').onclick = () => tab('list');
+
+renderList();
 render();
 </script>
 </body>
