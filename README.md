@@ -13,7 +13,7 @@ The result shows **Charge customer** and **You earn** side by side for **Standar
 
 ## Visits
 - **1 visit:** end of lease flea, general pest (unit, single-storey, double-storey).
-- **2 visits (German cockroach):** $202.50 per visit = $405 total, you earn $52.50 per visit = $105 total (Standard).
+- **German cockroach: priced per visit, 2 visits required.** Standard: charge $202.50 per visit and earn $52.50 per visit. Lower: charge $155.25 and earn $20.25 per visit.
 - **2 visits, PESTABLE quotes:** fleas in a lived-in home, bed bugs, mites, book mites, bird lice (biting pests).
 - **PESTABLE quotes:** rats and mice.
 

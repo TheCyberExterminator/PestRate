@@ -163,8 +163,8 @@
 </main>
 
 <div class="foot" id="foot"><div class="in">
-  <div><small>Charge customer</small><b id="fCharge">$0</b></div>
-  <div class="e"><small>You earn</small><b id="fEarn">$0</b></div>
+  <div><small id="fCl">Charge customer</small><b id="fCharge">$0</b></div>
+  <div class="e"><small id="fEl">You earn</small><b id="fEarn">$0</b></div>
   <button class="btn l" id="fSend">Send quote</button>
 </div></div>
 <div class="toast" id="toast"></div>
@@ -265,8 +265,8 @@ function option(s, tier){
     <div class="ttl"><div><span class="radio"></span>${title}</div><span class="hint">${hint}</span></div>
     ${v>1 ? `
       <div class="two">
-        <div class="box"><small>Charge · total</small><b>${money2(t.charge*v)}</b><em>${money2(t.charge)} × 2 visits</em></div>
-        <div class="box e"><small>You earn · total</small><b>${money2(t.earn*v)}</b><em>${money2(t.earn)} × 2 visits</em></div>
+        <div class="box"><small>Charge per visit</small><b>${money2(t.charge)}</b><em>2 visits = ${money2(t.charge*v)}</em></div>
+        <div class="box e"><small>You earn per visit</small><b>${money2(t.earn)}</b><em>2 visits = ${money2(t.earn*v)}</em></div>
       </div>` : `
       <div class="two">
         <div class="box"><small>Charge customer</small><b>${money2(t.charge)}</b></div>
@@ -288,7 +288,7 @@ function stepResult(){
   } else {
     const s = SERVICES[state.svc];
     html = `<div class="svc"><span class="ic">${p.icon}</span><div><h2>${s.name}</h2>
-        <p>${s.visits>1 ? '2 visits required · priced per visit' : '1 visit'}</p></div></div>
+        <p>${s.visits>1 ? 'Priced per visit · 2 visits required' : '1 visit'}</p></div></div>
       ${s.visits>1 ? twoVisitAlert(p) : (state.svc==='eolFlea' ? `<div class="alert green"><span>✅</span><span><b>One visit only</b>End of lease flea is a single preventative treatment for an empty property.</span></div>` : '')}
       ${option(s,'std')}${option(s,'low')}
       <div class="alert amber"><span>⏱️</span><span><b>Vacancy</b>${s.vac}</span></div>
@@ -318,7 +318,7 @@ function twoVisitAlert(p){
 function quoteText(){
   const s = SERVICES[state.svc], t = s[state.tier];
   const lines = [`Pest control quote – PESTABLE`, '', s.name,
-    s.visits>1 ? `${money2(t.charge)} per treatment × 2 treatments = ${money2(t.charge*2)}. Two treatments are required.` : `Price: ${money2(t.charge)}`,
+    s.visits>1 ? `${money2(t.charge)} per visit. Two visits are required (${money2(t.charge*2)} for both visits).` : `Price: ${money2(t.charge)}`,
     '', 'Includes: ' + s.inc.join(', ') + '.', s.vac, '', `Questions? Call ${PHONE}.`];
   return lines.join('\n');
 }
@@ -328,8 +328,11 @@ function updateFoot(){
   $('foot').classList.toggle('on', !!on);
   if (!on) return;
   const s = SERVICES[state.svc], t = s[state.tier];
-  $('fCharge').textContent = money2(t.charge*s.visits);
-  $('fEarn').textContent = money2(t.earn*s.visits);
+  const pv = s.visits > 1;
+  $('fCl').textContent = pv ? 'Charge per visit' : 'Charge customer';
+  $('fEl').textContent = pv ? 'You earn per visit' : 'You earn';
+  $('fCharge').textContent = money2(t.charge);
+  $('fEarn').textContent = money2(t.earn);
 }
 $('fSend').onclick = () => {
   const msg = quoteText();
